@@ -6,13 +6,17 @@ import About from './UI/Home/About'
 import Contact from './UI/Home/Contact'
 
 const Home = () => {
-  return (
+  let count = 0;
+  console.log(count++);
+    return (
     <div className='relative h-screen'>
+      <h1> {count}</h1>
       <Navbar />
       <Hero />
       <About />
       <Contact />
       <Footer />
+
     </div>
   )
 }
