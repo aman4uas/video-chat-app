@@ -6,15 +6,12 @@ const dbConnection = require("./config/database");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-/*  Not Important   */
-const OTP = require("./models/OTP");
-const { auth } = require("./middlewares/auth");
-const helper = require('./Controllers/Helper');
-/*  Not Important   */
-
+app.use(express.static("public"));
 app.use([cookieParser(), express.json()]);
 dbConnection.connect();
 
+//Routes
+app.get("/", (req, res) => res.sendFile("index.html"));
 app.use("/api/user", userRoutes);
 
-app.listen(PORT, () => console.log(`App is listening at ${PORT}`));
+app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
