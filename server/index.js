@@ -11,7 +11,7 @@ app.use([cookieParser(), express.json()]);
 dbConnection.connect();
 
 //Routes
-app.get("/", (req, res) => res.sendFile("server.html"));
+app.get("/", (req, res) => res.sendFile("index.html"));
 app.use("/api/user", userRoutes);
 app.get("/test", (req, res) => {
   return res.json({
@@ -19,5 +19,6 @@ app.get("/test", (req, res) => {
   });
 });
 
-
-app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`App is listening on port ${PORT}, URL: http://localhost:4000`)
+);
