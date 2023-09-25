@@ -30,6 +30,7 @@ export default function App() {
     return () => {
       clearInterval(interval);
     };
+    // eslint-disable-next-line
   }, [seconds]);
 
   function handleResetOTP() {
